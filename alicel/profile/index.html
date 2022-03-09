@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Animel Tracker</title>
+	<base href="/aau/wnm617/alicel/">
+	<link rel="stylesheet" type="text/css" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="lib/js/jquery-2.2.4.min.js"></script>
+	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="js/app.js">
+</head>
+<body>
+	<section data-role="page" id='signin-page'>
+	<div data-role="main">
+	<form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="sign-username" class="form-label">username</label>
+      <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your username">
+    </div>
+    <div class="form-control">
+      <label for="signin-password" class="form-label">password</label>
+    <input type="text" id="signin-password" data-role="none"class="form-input" placeholder="Type your password">
+    </div>
+  <!--   <input type="submit" data-role="none"> -->
+    <div class="form-control">
+    <a href="#recent-page" class="form-button">Sumbit</a>
+    </div>
+</form>
+</div>
+</section>
+
+
+
+
+ <section data-role="page" id="recent-page">
+   <div data-role="main">map </div>
+   <footer data-role="footer">
+   	<ul><li><a href="#recent-page">Rencent</a></li>
+   		<li><a href="#list-page">list</a></li>
+   		<li><a href="#user-profile-page">profile</a></li>
+   		</ul>
+   </footer>
+</section>
+
+
+
+
+<section data-role="page" id="list-page">
+	<header data-role="header">
+		 <h1> Alien Animal List</h1>
+		 <ul>
+		 	<li><a href="#recent-page">Back</a></li>
+		 	<li class="flex-stretch"></li>
+		 	<li><a href="#animal-add-page">Add</a></li>
+		 	</ul>
+   </header>
+   <div data-role="main">
+   	<ul>
+        <li><a href="#animal-profile-page">alien animal 1</a></li>
+   		<li><a href="#animal-profile-page">alien animal 2</a></li>
+   		<li><a href="#animal-profile-page">alien animal 3</a></li>
+   		<li><a href="#animal-profile-page">alien animal 4</a></li>
+   		<li><a href="#animal-profile-page">alien animal 5</a></li>
+   		<li><a href="#animal-profile-page">alien animal 6</a></li>
+   		<li><a href="#animal-profile-page">alien animal 7</a></li>
+   		<li><a href="#animal-profile-page">alien animal 8</a></li>
+   		<li><a href="#animal-profile-page">alien animal 9</a></li>
+   		<li><a href="#animal-profile-page">alien animal 10</a></li>
+   	</ul>
+   </div>
+   <footer data-role="footer">
+    <ul><li><a href="#recent-page">Rencent</a></li>
+   		<li><a href="#list-page">list</a></li>
+   		<li><a href="#user-profile-page">profile</a></li>
+   		</ul>
+   </footer>
+</section>
+
+<section data-role="page" id="user-profile-page">
+	<header data-role="header">
+		 <h1>User Profile</h1>
+		  <ul>   
+		  	<li><a href="#recent-page">Back</a></li>
+   	       <li class="flex-stretch"></li>
+		   <li><a href="#user-edit-page">Edit</a></li>
+		   </ul>
+   
+   </header>
+   <div data-role="main"> 	
+	<form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="userimage" class="take-image"> user's image</label>
+    
+      <label for="sign-username" class="form-label">username</label>
+      <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Alisa">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">gender</label>
+    <input type="text" id="signin-usergender" data-role="none"class="form-input" placeholder="Female">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-location" class="form-label">location</label>
+    <input type="text" id="signin-userlocation" data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+
+  <!--   <input type="submit" data-role="none"> -->
+    <div class="form-control">
+    <a href="#recent-page" class="form-button">Confirm</a>
+    </div>
+</form>
+    </div>
+    </div>
+   <footer data-role="footer">
+   <ul><li><a href="#recent-page">Rencent</a></li>
+   		<li><a href="#list-page">list</a></li>
+   		<li><a href="#user-profile-page">profile</a></li>
+   		</ul>
+   </footer>
+</section>
+
+
+<section data-role="page" id="user-edit-page">
+		<header data-role="header">
+		 	<h1>User Edit</h1>
+		 
+		 	<ul>
+            <li><a href="#user-profile-page">Back</a></li>
+		 	<li class="flex-stretch"></li>
+		 	<li><a href="#list-page">Save</a><li>
+		 	</ul>	
+   </header>
+
+   <div data-role="main">  	
+	<form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="userimage" class="take-image"> user's image</label>
+    
+      <label for="sign-username" class="form-label">username</label>
+      <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Add username">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">gender</label>
+    <input type="text" id="signin-usergender" data-role="none"class="form-input" placeholder="Add gender">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-location" class="form-label">location</label>
+    <input type="text" id="signin-userlocation" data-role="none"class="form-input" placeholder="Add location">
+    </div>
+
+
+  <!--   <input type="submit" data-role="none"> -->
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+   <footer data-role="footer">
+    <ul><li><a href="#recent-page">Rencent</a></li>
+   		<li><a href="#list-page">list</a></li>
+   		<li><a href="#user-profile-page">profile</a></li>
+   		</ul>
+   </footer>
+</section>
+
+
+<section data-role="page" id="animal-profile-page">
+	<header data-role="header">
+		 <h1>Animal Profile</h1>
+		  <ul>   
+		  	<li><a href="#list-page">Back</a></li>
+   	       <li class="flex-stretch"></li>
+		   <!-- <li><a href="#Edit-animal-page">Edit</a></li> -->
+		   </ul>
+   
+   </header>
+   <div data-role="main">
+	<form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="animalimage" class="take-image"> alien animal image</label>
+    <!--   <input type="text" id="signin-animalimage" data-role="none" class="form-input" placeholder="Type animal's image"> -->
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="MOMOKOU">
+    </div>
+    <div class="form-control">
+      <label for="signin-plante" class="form-label">plante</label>
+    <input type="text" id="signin-animalplante" data-role="none"class="form-input" placeholder="Jupiter">
+    </div>
+
+
+   <div class="form-control">
+      <label for="signin-location" class="form-label">location</label>
+    <input type="text" id="signin-"animallocation data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+  <!--   <input type="submit" data-role="none"> -->
+    <div class="form-control">
+    <a href="#list-page" class="form-button">Confirm</a>
+    </div>
+</form>
+    </div>
+   <footer data-role="footer">
+   <ul><li><a href="#recent-page">Rencent</a></li>
+   		<li><a href="#list-page">list</a></li>
+   		<li><a href="#user-profile-page">profile</a></li>
+   		</ul>
+   </footer>
+</section>
+
+
+<section data-role="page" id="animal-add-page">
+	<header data-role="header">
+		 <h1>Add Animal Profile</h1>
+		  <ul>   
+		  	<li><a href="#list-page">Back</a></li>
+   	       <li class="flex-stretch"></li>
+		   <!-- <li><a href="#Edit-animal-page">Edit</a></li> -->
+		   </ul>
+   
+   </header>
+   <div data-role="main">
+	<form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="animalimage" class="take-image"> alien animal image</label>
+    <!--   <input type="text" id="signin-animalimage" data-role="none" class="form-input" placeholder="Type animal's image"> -->
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="Add animal's name">
+    </div>
+    <div class="form-control">
+      <label for="signin-plante" class="form-label">plante</label>
+    <input type="text" id="signin-animalplante" data-role="none"class="form-input" placeholder="Add animal's plante">
+    </div>
+
+
+   <div class="form-control">
+      <label for="signin-location" class="form-label">location</label>
+    <input type="text" id="signin-"animallocation data-role="none"class="form-input" placeholder="Add animal's location">
+    </div>
+
+  <!--   <input type="submit" data-role="none"> -->
+    <div class="form-control">
+    <a href="#list-page" class="form-button">Confirm</a>
+    </div>
+</form>
+    </div>
+   <footer data-role="footer">
+   <ul><li><a href="#recent-page">Rencent</a></li>
+   		<li><a href="#list-page">list</a></li>
+   		<li><a href="#user-profile-page">profile</a></li>
+   		</ul>
+   </footer>
+</section>
+
+
+
+
+</body>
+</html>  
