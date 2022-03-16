@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>AnimalTracker</title>
-	<base href="/aau/wnm617/liu.alice/">
+	<title>BunnyTracker</title>
+	<base href="/aau/wnm617/alicel/">
 	<link rel="stylesheet" type="text/css" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
 	<link rel="stylesheet" href="css/app.css">
 
@@ -15,72 +15,53 @@
   <script src="js/signin.js"></script>
 </head>
 <body>
-
-<section data-role="page" id="signin-page">
-      <div data-role="main" class="display-flex flex-column">
-         <div class="flex-stretch"></div>
-         <div style="text-align:center;margin-bottom:10vmin">
-            <img src="img/hero.svg" alt="" style="width:50vmin;height:50vmin">
-         </div>
-         <form id="signin-form" class="form" data-ajax="false">
-            <div class="form-control">
-               <label for="signin-username" class="form-label">Username</label>
-               <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your Username">
-            </div>
-            <div class="form-control">
-               <label for="signin-password" class="form-label">Password</label>
-               <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Type your Password">
-            </div>
-            <input type="submit" data-role="none">
-            <div class="form-control">
-               <button type="submit" class="form-button" data-role="none">Submit</button>
-            </div>
-            <div class="form-control" style="text-align:center;font-size:0.8em;">
-               <p>New to the app? <a href="#signup-page">Sign Up!</a></p>
-            </div>
-         </form>
-      </div>
-   </section>
+	<section data-role="page" id='signin-page'>
+	<div data-role="main"  class="display-flex flex-column" >
+  <div class="flex-stretch"></div>
+  <div style="text-align:center;margin-bottom:10vmin">
+     <img src="img/bunny.svg" alt="" style="width:50vmin;height:50vmin"></div>
+	<form id="signin-form" class="form" data-ajax="false">
+    <div class="form-control">
+      <label for="sign-username" class="form-label">username</label>
+      <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your username">
+    </div>
+    <div class="form-control">
+      <label for="signin-password" class="form-label">Password</label>
+    <input type="text" id="signin-password" data-role="none"class="form-input" placeholder="Type your password">
+    </div>
+  <!--   <input type="submit" data-role="none"> -->
+    <div class="form-control">
+    <a href="#recent-page" class="form-button">Sumbit</a>
+    </div>
+</form>
+</div>
+</section>
 
 
-  <section data-role="page" id="signup-page">
-      <div data-role="main" class="display-flex flex-column">
-         <div class="flex-stretch"></div>
-         <form id="signup-form" class="form" data-ajax="false">
-            <div class="form-control">
-               <label for="signup-username" class="form-label">Username</label>
-               <input type="text" id="signup-username" data-role="none" class="form-input" placeholder="Type your Username">
-            </div>
-            <div class="form-control">
-               <label for="signup-password" class="form-label">Password</label>
-               <input type="password" id="signup-password" data-role="none" class="form-input" placeholder="Type your Password">
-            </div>
-            <div class="form-control">
-               <label for="signup-password2" class="form-label">Confirm Password</label>
-               <input type="password" id="signup-password2" data-role="none" class="form-input" placeholder="Type your Password again">
-            </div>
-            <input type="submit" data-role="none">
-            <div class="form-control">
-               <button type="button" class="form-button">Submit</button>
-               <a href="#recent-page" class="form-button">Sign Up</a>
-            </div>
-            <div class="form-control" style="text-align:center;font-size:0.8em;">
-               <p>Already have an account? <a href="#signin-page">Sign In!</a></p>
-            </div>
-         </form>
-         <div class="flex-stretch"></div>
-      </div>
-   </section>
+<section data-role="page" id='signup-page'>
+  <div data-role="main">
+  <form id="signup-form" class="form">
+    <div class="form-control">
+      <label for="sign-username" class="form-label">username</label>
+      <input type="text" id="signup-username" data-role="none" class="form-input" placeholder="Type your username">
+    </div>
+    <div class="form-control">
+      <label for="signup-password" class="form-label">password</label>
+    <input type="text" id="signup-password" data-role="none"class="form-input" placeholder="Type your password">
+    </div>
+  <!--   <input type="submit" data-role="none"> -->
+    <div class="form-control">
+    <a href="#recent-page" class="form-button">Sumbit</a>
+    </div>
+</form>
+</div>
+</section>
 
 
 
 
  <section data-role="page" id="recent-page">
-   <div data-role="main" class="map-placeholder">
-       <div class="marker" style="position:absolute;top:30vh;left:20vw" data-activate="#map-drawer">
-            <img src="img/icons/marker.svg" alt="" class="icon">
-
-    </div>
+   <div data-role="main">map </div>
    <footer data-role="footer">
    	<ul><li><a href="#recent-page">Rencent</a></li>
    		<li><a href="#list-page">list</a></li>
@@ -89,88 +70,31 @@
    </footer>
 </section>
 
-<!-- <div class="modal" id="map-drawer">
-         <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
-         <div class="modal-drawer left">
-            <div class="modal-head display-flex">
-               <div class="flex-none"> sidebar </div>
-               <div class="flex-stretch"></div>
-               <div class="flex-none">
-                  <a href="#" data-deactivate="#map-drawer">&times;</a>
-               </div>
-               
-            </div>
-            <div class="modal-body">
-               content!
-            </div>
-         </div>
-      </div>
-   </section> --> <!--  -->
 
-<!--  <section data-role="page" id="list-page">
-      <header data-role="header">
-         <h1>Animal List</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#" data-activate="#list-add-animal-modal">Add</a></li>
-         </ul>
-      </header>
-      <div data-role="main" class="overscroll">
-       ul>li*10>a[href=#animal-profile-page]>{Animal $} --> -->
-     
+
 
 <section data-role="page" id="list-page">
 	<header data-role="header">
-		 <h1> Animal List</h1>
+		 <h1> Alien Animal List</h1>
 		 <ul>
-     			 	<li class="flex-stretch"></li>
-          		 	<li><a href="#animal-add-page">Add</a></li>
-     </ul>
-    
+		 	<li><a href="#recent-page">Back</a></li>
+		 	<li class="flex-stretch"></li>
+		 	<li><a href="#animal-add-page">Add</a></li>
+		 	</ul>
    </header>
    <div data-role="main">
    	<ul>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-      	</ul>
+        <li><a href="#animal-profile-page">alien animal 1</a></li>
+   		<li><a href="#animal-profile-page">alien animal 2</a></li>
+   		<li><a href="#animal-profile-page">alien animal 3</a></li>
+   		<li><a href="#animal-profile-page">alien animal 4</a></li>
+   		<li><a href="#animal-profile-page">alien animal 5</a></li>
+   		<li><a href="#animal-profile-page">alien animal 6</a></li>
+   		<li><a href="#animal-profile-page">alien animal 7</a></li>
+   		<li><a href="#animal-profile-page">alien animal 8</a></li>
+   		<li><a href="#animal-profile-page">alien animal 9</a></li>
+   		<li><a href="#animal-profile-page">alien animal 10</a></li>
+   	</ul>
    </div>
    <footer data-role="footer">
     <ul><li><a href="#recent-page">Rencent</a></li>
@@ -180,14 +104,11 @@
    </footer>
 </section>
 
-
-
 <section data-role="page" id="user-profile-page">
 	<header data-role="header">
 		 <h1>User Profile</h1>
-		  <ul>  
-      <li><a href="#" class="js-logout">Logout</a> 
-		
+		  <ul>   
+		  	<li><a href="#recent-page">Back</a></li>
    	       <li class="flex-stretch"></li>
 		   <li><a href="#user-edit-page">Edit</a></li>
 		   </ul>
@@ -287,7 +208,7 @@
    <div data-role="main">
 	<form id="signin-form" class="form">
     <div class="form-control">
-      <label for="animalimage" class="take-image"> animal image</label>
+      <label for="animalimage" class="take-image"> alien animal image</label>
     <!--   <input type="text" id="signin-animalimage" data-role="none" class="form-input" placeholder="Type animal's image"> -->
       <label for="sign-animalname" class="form-label">animal name</label>
       <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="MOMOKOU">
@@ -331,7 +252,7 @@
    <div data-role="main">
 	<form id="signin-form" class="form">
     <div class="form-control">
-      <label for="animalimage" class="take-image"> Animal image</label>
+      <label for="animalimage" class="take-image"> alien animal image</label>
     <!--   <input type="text" id="signin-animalimage" data-role="none" class="form-input" placeholder="Type animal's image"> -->
       <label for="sign-animalname" class="form-label">animal name</label>
       <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="Add animal's name">
