@@ -32,8 +32,19 @@ $(() => {
       $(target).toggleClass("active")
    })
    .on("click", "[data-activateone]", function() {
-      let target = $(this).data("activate");
+      let target = $(this).data("activateone");
       $(target).addClass("active")
          .siblings().removeClass("active")
    })
+
+
+   ;
+
+   $("[data-template]").each(function(){
+      let target = $(this).data("template");
+      $(this).html($(target).html())
+   });
+
+
+
 });

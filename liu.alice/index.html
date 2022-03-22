@@ -78,17 +78,24 @@
 
    <section data-role="page" id="recent-page">
       <div data-role="main" class="map-placeholder">
+           <div class="recent-search">
+            <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
+               <input type="search" data-role="none" placeholder="Search">
+            </form>
+            <div class="flex-none" style="line-height:3rem;padding:0 0.5em">
+          </div>
+         </div>
          <div class="marker" style="position:absolute;top:30vh;left:20vw" data-activate="#map-drawer">
             <img src="img/icons/marker.svg" alt="" class="icon">
          </div>
       </div>
-      <footer data-role="footer">
-      	<ul>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      <!-- 	<ul>
             <li><a href="#recent-page">Recent</a></li>
             <li><a href="#list-page">list</a></li>
             <li><a href="#user-profile-page">profile</a></li>
          </ul>
-      </footer>
+      </footer> -->
 
 
 
@@ -121,61 +128,110 @@
 		 <h1> Animal List</h1>
 		 <ul>
      			 	<li class="flex-stretch"></li>
-          		 	<li><a href="#" data-activate="#list-add-animal-modal">Add</a></li>
+          		 	<li><a href="#" data-activate="#list-add-animal-modal"> </a></li>
      </ul>
     
    </header>
    <div data-role="main" class="overscroll">
-   	<ul>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-      	</ul>
-   </div>
-   <footer data-role="footer">
-     <ul>
-         <li><a href="#recent-page">Recent</a></li>
-   		<li><a href="#list-page">list</a></li>
-   		<li><a href="#user-profile-page">profile</a></li>
-   		</ul>
-   </footer>
+   	<ul class="animal list">
+            <li class="animal-list-item">
+               <a href="#animal-profile-page">
+                  <div class="animal-list-image"><img src="img/bunny.png" alt="">
+                  </div>
+                  <div class="animal-list-body">
+                  <div class="animal-list-name">Mike</div>
+                  <div class="animal-list-type">Bunny</div>
+                  <div class="animal-list-breed">Lion head</div>
+                  </div>
+               </a>
+                        </li>
+            <li class="animal-list-item">
+               <a href="#animal-profile-page2">
+                  <div class="animal-list-image"><img src="img/creamchicken.png" alt=""></div>
+                  <div class="animal-list-body">
+                     <div class="animal-list-name">Kelly</div>
+                     <div class="animal-list-type">Chicken</div>
+                     <div class="animal-list-breed">Leghorn</div>
+                  </div>
+               </a>
+            </li>
+            <li class="animal-list-item">
+               <a href="#animal-profile-page3">
+                  <div class="animal-list-image"><img src="img/pinkbunny.png" alt=""></div>
+                  <div class="animal-list-body">
+                     <div class="animal-list-name">Coco</div>
+                     <div class="animal-list-type">Bunny</div>
+                     <div class="animal-list-breed">Beveren</div>
+                  </div>
+               </a>
+            </li>
+            <li class="animal-list-item">
+               <a href="#animal-profile-page4">
+                  <div class="animal-list-image"><img src="img/hedgehog.png" alt=""></div>
+                  <div class="animal-list-body">
+                     <div class="animal-list-name">Alisa</div>
+                     <div class="animal-list-type">Hedgehog</div>
+                     <div class="animal-list-breed">Egyptian long eared</div>
+                  </div>
+               </a>
+            </li>
+            <li class="animal-list-item">
+               <a href="#animal-profile-page5">
+                  <div class="animal-list-image"><img src="img/racoon.png" alt=""></div>
+                  <div class="animal-list-body">
+                     <div class="animal-list-name">Miumiu</div>
+                     <div class="animal-list-type">Raccoon</div>
+                     <div class="animal-list-breed">Procyon</div>
+                  </div>
+               </a>
+            </li>
+            <li class="animal-list-item">
+               <a href="#animal-profile-page6">
+                  <div class="animal-list-image"><img src="img/lemonchicken.png" alt=""></div>
+                  <div class="animal-list-body">
+                     <div class="animal-list-name">Angela</div>
+                     <div class="animal-list-type">Chicken</div>
+                     <div class="animal-list-breed">New hampshire</div>
+                  </div>
+               </a>
+            </li>
+            <li class="animal-list-item">
+               <a href="#animal-profile-page7">
+                  <div class="animal-list-image"><img src="img/mangochicken.png" alt=""></div>
+                  <div class="animal-list-body">
+                     <div class="animal-list-name">Philips</div>
+                     <div class="animal-list-type">Chicken</div>
+                     <div class="animal-list-breed">Ayam kampong</div>
+                  </div>
+               </a>
+            </li>
+            <li class="animal-list-item">
+               <a href="#animal-profile-page">
+                  <div class="animal-list-image"><img src="img/bunny.png" alt=""></div>
+                  <div class="animal-list-body">
+                     <div class="animal-list-name">Jelly</div>
+                     <div class="animal-list-type">Bunny</div>
+                     <div class="animal-list-breed">Beveren</div>
+                  </div>
+               </a>
+            </li>
+            <li class="animal-list-item">
+               <a href="#animal-profile-page">
+                  <div class="animal-list-image"><img src="img/creamchicken.png" alt=""></div>
+                  <div class="animal-list-body">
+                     <div class="animal-list-name">Anna</div>
+                     <div class="animal-list-type">Chicken</div>
+                     <div class="animal-list-breed">Leghorn</div>
+                  </div>
+               </a>
+            </li>
+
+         </ul>
+
+          <div class="floater bottom right circle-button" data-activate="#list-add-animal-modal">&plus;</div>
+      </div>
+
+        <footer data-role="footer" data-template="#footer-template"></footer>
 
    <div class="modal" id="list-add-animal-modal">
          <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
@@ -216,15 +272,329 @@
        <h1>Animal Profile</h1>
         <ul>   
          <li><a href="#" data-rel="back">Back</a></li>
-        </ul>
-         
+         <li class="flex-stretch"></li>
+         <a href="#animal-edit-page">Edit</a>
+        </ul>   
    </header>
    <div data-role="main">
-       Animal profile
-       <a href="#animal-edit-page">Edit</a>
+   <form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="animalimage" class="take-animalimage"></label>
+    
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Mike">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">type</label>
+    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Bunny">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-animallocation" class="form-label">location</label>
+    <input type="text" id="signin-animallocation" data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+    </div> 
+    <footer data-role="footer" data-template="#footer-template"></footer>
+ </section>   
    </div>
 </section>
 
+
+
+
+<section data-role="page" id="animal-profile-page2">
+   <header data-role="header">
+       <h1>Animal Profile</h1>
+        <ul>   
+         <li><a href="#" data-rel="back">Back</a></li>
+         <li class="flex-stretch"></li>
+         <a href="#animal-edit-page">Edit</a>
+        </ul>   
+   </header>
+   <div data-role="main">
+   <form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="animalimage" class="take-animalimage2"></label>
+    
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Kelly">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">type</label>
+    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Chicken">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-animallocation" class="form-label">location</label>
+    <input type="text" id="signin-animallocation" data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+    </div> 
+    <footer data-role="footer" data-template="#footer-template"></footer>
+ </section>   
+   </div>
+</section>
+
+
+
+<section data-role="page" id="animal-profile-page3">
+   <header data-role="header">
+       <h1>Animal Profile</h1>
+        <ul>   
+         <li><a href="#" data-rel="back">Back</a></li>
+         <li class="flex-stretch"></li>
+         <a href="#animal-edit-page">Edit</a>
+        </ul>   
+   </header>
+   <div data-role="main">
+   <form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="animalimage" class="take-animalimage3"></label>
+    
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Coco">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">type</label>
+    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Bunny">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-animallocation" class="form-label">location</label>
+    <input type="text" id="signin-animallocation" data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+    </div> 
+    <footer data-role="footer" data-template="#footer-template"></footer>
+ </section>   
+   </div>
+</section>
+
+
+
+
+<section data-role="page" id="animal-profile-page4">
+   <header data-role="header">
+       <h1>Animal Profile</h1>
+        <ul>   
+         <li><a href="#" data-rel="back">Back</a></li>
+         <li class="flex-stretch"></li>
+         <a href="#animal-edit-page">Edit</a>
+        </ul>   
+   </header>
+   <div data-role="main">
+   <form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="animalimage" class="take-animalimage4"></label>
+    
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Alisa">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">type</label>
+    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Hedgehog">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-animallocation" class="form-label">location</label>
+    <input type="text" id="signin-animallocation" data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+    </div> 
+    <footer data-role="footer" data-template="#footer-template"></footer>
+ </section>   
+   </div>
+</section>
+
+
+
+
+
+<section data-role="page" id="animal-profile-page5">
+   <header data-role="header">
+       <h1>Animal Profile</h1>
+        <ul>   
+         <li><a href="#" data-rel="back">Back</a></li>
+         <li class="flex-stretch"></li>
+         <a href="#animal-edit-page">Edit</a>
+        </ul>   
+   </header>
+   <div data-role="main">
+   <form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="animalimage" class="take-animalimage5"></label>
+    
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Miumiu">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">type</label>
+    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Raccoon">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-animallocation" class="form-label">location</label>
+    <input type="text" id="signin-animallocation" data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+    </div> 
+    <footer data-role="footer" data-template="#footer-template"></footer>
+ </section>   
+   </div>
+</section>
+
+
+
+<section data-role="page" id="animal-profile-page6">
+   <header data-role="header">
+       <h1>Animal Profile</h1>
+        <ul>   
+         <li><a href="#" data-rel="back">Back</a></li>
+         <li class="flex-stretch"></li>
+         <a href="#animal-edit-page">Edit</a>
+        </ul>   
+   </header>
+   <div data-role="main">
+   <form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="animalimage" class="take-animalimage6"></label>
+    
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Angela">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">type</label>
+    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Chicken">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-animallocation" class="form-label">location</label>
+    <input type="text" id="signin-animallocation" data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+    </div> 
+    <footer data-role="footer" data-template="#footer-template"></footer>
+ </section>   
+   </div>
+</section>
+
+
+
+<section data-role="page" id="animal-profile-page7">
+   <header data-role="header">
+       <h1>Animal Profile</h1>
+        <ul>   
+         <li><a href="#" data-rel="back">Back</a></li>
+         <li class="flex-stretch"></li>
+         <a href="#animal-edit-page">Edit</a>
+        </ul>   
+   </header>
+   <div data-role="main">
+   <form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="animalimage" class="take-animalimage7"></label>
+    
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="philip">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">type</label>
+    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Chicken">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-animallocation" class="form-label">location</label>
+    <input type="text" id="signin-animallocation" data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+    </div> 
+    <footer data-role="footer" data-template="#footer-template"></footer>
+ </section>   
+   </div>
+</section>
+
+
+
+
+
+<section data-role="page" id="animal-edit-page">
+   <header data-role="header">
+       <h1>User Profile<h1>
+           <ul>
+           <li><a href="#" data-rel="back">Back</a></li> 
+           <li class="flex-stretch"></li>
+           </ul>
+    </header> 
+   <div data-role="main">
+    <form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="Animalimage" class="take-outsideimage">animal image</label>
+    
+      <label for="sign-animalname" class="form-label">animal name</label>
+      <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="Add animal name">
+    </div>
+    <div class="form-control">
+      <label for="signin-animaltype" class="form-label">type</label>
+    <input type="text" id="signin-animaltype" data-role="none"class="form-input" placeholder="Add type">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-animallocation" class="form-label">location</label>
+    <input type="text" id="signin-animallocation" data-role="none"class="form-input" placeholder="Add location">
+    </div>
+
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+    </div> 
+    <footer data-role="footer" data-template="#footer-template"></footer>
+ </section>   
 
 
 
@@ -240,16 +610,32 @@
            </ul>
     </header> 
    <div data-role="main">
-      profile
-    </div>        
-    <footer data-role="footer">
-        <ul>
-           <li><a href="#recent-page">Recent</a></li>
-   		  <li><a href="#list-page">list</a></li>
-   		  <li><a href="#user-profile-page">profile</a></li>
-   		</ul>
-   </footer>
-</section>
+   <form id="signin-form" class="form">
+    <div class="form-control">
+      <label for="userimage" class="take-userimage"></label>
+    
+      <label for="sign-username" class="form-label">username</label>
+      <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Alice Liu">
+    </div>
+    <div class="form-control">
+      <label for="signin-gender" class="form-label">gender</label>
+    <input type="text" id="signin-usergender" data-role="none"class="form-input" placeholder="Female">
+    </div>
+
+   <div class="form-control">
+      <label for="signin-location" class="form-label">location</label>
+    <input type="text" id="signin-userlocation" data-role="none"class="form-input" placeholder="San Francisco">
+    </div>
+
+    <div class="form-control">
+    <a href="#user-profile-page" class="form-button">Confirm</a>
+    </div>
+</form>
+      
+</div>
+    </div> 
+    <footer data-role="footer" data-template="#footer-template"></footer>
+ </section>   
 
 
 
@@ -258,8 +644,7 @@
 <section data-role="page" id="user-edit-page">
 		<header data-role="header">
 		 	<h1>User Edit</h1>
-		 
-		 	<ul>
+				<ul>
             <li><a href="#" data-rel="back">Back</a></li>
 		 	   <li class="flex-stretch"></li>
 		 	   <li><a href="#list-page">Save</a><li>
@@ -284,25 +669,36 @@
     <input type="text" id="signin-userlocation" data-role="none"class="form-input" placeholder="Add location">
     </div>
 
-
-  <!--   <input type="submit" data-role="none"> -->
     <div class="form-control">
     <a href="#user-profile-page" class="form-button">Confirm</a>
     </div>
 </form>
       
 </div>
-   <footer data-role="footer">
-     <ul>
-         <li><a href="#recent-page">Recent</a></li>
-   		<li><a href="#list-page">list</a></li>
-   		<li><a href="#user-profile-page">profile</a></li>
-   	</ul>
-   </footer>
 </section>
 
 
 
 
-</body>
+   <script type="text/template" id="footer-template">
+      <ul class="nav-icon-set">
+         <li><a href="#recent-page" data-activateone=".nav-icon-set li:nth-child(1)">
+            <span class="nav-icon"><img class="icon" src="img/icons/map.svg"></span>
+            <span class="nav-icon-label">Map</span>
+         </a></li>
+         <li><a href="#list-page" data-activateone=".nav-icon-set li:nth-child(2)">
+            <span class="nav-icon"><img class="icon" src="img/icons/list.svg"></span>
+            <span class="nav-icon-label">List</span>
+         </a></li>
+         <li><a href="#user-profile-page" data-activateone=".nav-icon-set li:nth-child(3)">
+            <span class="nav-icon"><img class="icon" src="img/icons/profile.svg"></span>
+            <span class="nav-icon-label">Profile</span>
+         </a></li>
+      </ul>
+   </script>
+ 
+
+
+
+</body>   
 </html>  
