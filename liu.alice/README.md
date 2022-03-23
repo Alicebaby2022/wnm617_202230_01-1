@@ -10,7 +10,7 @@ This class is so super cool
 
 ## Class Project: Animal Tracker
 
-- http://captain-k.com/aau/wnm617/liu.alice/index.html#
+- http://captain-k.com/aau/wnm617/liu.alice/index.html#signin-page
 
 ## Side Assignments
 
