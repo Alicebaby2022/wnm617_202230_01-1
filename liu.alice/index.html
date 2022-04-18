@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -9,10 +9,15 @@
 	<link rel="stylesheet" href="css/app.css">
 
 	<script src="lib/js/jquery-2.2.4.min.js"></script>
-	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
 	<link rel="stylesheet" href="js/app.js">
   <script src="js/app.js"></script>
   <script src="js/signin.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/parts.js"></script>
+
+  <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 
@@ -265,46 +270,31 @@
 
 
 
+   <section data-role="page" id="animal-profile-page">
+      <header data-role="header">
+         <h1></h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#user-edit-page">Edit</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <div class="animal-profile-top">
+         </div>
+         <div class="animal-profile-nav">
+            <div class="active">Map</div>
+            <div>Description</div>
+         </div>
+         <div class="animal-profile-bottom">
+            <div class="animal-profile-map active">
+               <div class="map map-placeholder"></div>
+            </div>
+            <div class="animal-profile-description"></div>
+         </div>
+      </div>
+   </section>
 
-
-<section data-role="page" id="animal-profile-page">
-   <header data-role="header">
-       <h1>Animal Profile</h1>
-        <ul>   
-         <li><a href="#" data-rel="back">Back</a></li>
-         <li class="flex-stretch"></li>
-         <a href="#animal-edit-page">Edit</a>
-        </ul>   
-   </header>
-   <div data-role="main">
-   <form id="signin-form" class="form">
-    <div class="form-control">
-      <label for="animalimage" class="take-animalimage"></label>
-    
-      <label for="sign-animalname" class="form-label">animal name</label>
-      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Mike">
-    </div>
-    <div class="form-control">
-      <label for="signin-gender" class="form-label">type</label>
-    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Bunny">
-    </div>
-
-   <div class="form-control">
-      <label for="signin-animallocation" class="form-label">location</label>
-    <input type="text" id="signin-animallocation" data-role="none"class="form-input" placeholder="San Francisco">
-    </div>
-
-    <div class="form-control">
-    <a href="#user-profile-page" class="form-button">Confirm</a>
-    </div>
-</form>
-      
-</div>
-    </div> 
-    <footer data-role="footer" data-template="#footer-template"></footer>
- </section>   
-   </div>
-</section>
 
 
 
@@ -324,11 +314,11 @@
       <label for="animalimage" class="take-animalimage2"></label>
     
       <label for="sign-animalname" class="form-label">animal name</label>
-      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Kelly">
+      <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="Kelly">
     </div>
     <div class="form-control">
       <label for="signin-gender" class="form-label">type</label>
-    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Chicken">
+    <input type="text" id="signin-animalgender" data-role="none"class="form-input" placeholder="Chicken">
     </div>
 
    <div class="form-control">
@@ -365,11 +355,11 @@
       <label for="animalimage" class="take-animalimage3"></label>
     
       <label for="sign-animalname" class="form-label">animal name</label>
-      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Coco">
+      <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="Coco">
     </div>
     <div class="form-control">
       <label for="signin-gender" class="form-label">type</label>
-    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Bunny">
+    <input type="text" id="signin-animalgender" data-role="none"class="form-input" placeholder="Bunny">
     </div>
 
    <div class="form-control">
@@ -407,11 +397,11 @@
       <label for="animalimage" class="take-animalimage4"></label>
     
       <label for="sign-animalname" class="form-label">animal name</label>
-      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Alisa">
+      <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="Alisa">
     </div>
     <div class="form-control">
       <label for="signin-gender" class="form-label">type</label>
-    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Hedgehog">
+    <input type="text" id="signin-animalgender" data-role="none"class="form-input" placeholder="Hedgehog">
     </div>
 
    <div class="form-control">
@@ -450,11 +440,11 @@
       <label for="animalimage" class="take-animalimage5"></label>
     
       <label for="sign-animalname" class="form-label">animal name</label>
-      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Miumiu">
+      <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="Miumiu">
     </div>
     <div class="form-control">
       <label for="signin-gender" class="form-label">type</label>
-    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Raccoon">
+    <input type="text" id="signin-animalgender" data-role="none"class="form-input" placeholder="Raccoon">
     </div>
 
    <div class="form-control">
@@ -491,11 +481,11 @@
       <label for="animalimage" class="take-animalimage6"></label>
     
       <label for="sign-animalname" class="form-label">animal name</label>
-      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="Angela">
+      <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="Angela">
     </div>
     <div class="form-control">
       <label for="signin-gender" class="form-label">type</label>
-    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Chicken">
+    <input type="text" id="signin-animalgender" data-role="none"class="form-input" placeholder="Chicken">
     </div>
 
    <div class="form-control">
@@ -532,11 +522,11 @@
       <label for="animalimage" class="take-animalimage7"></label>
     
       <label for="sign-animalname" class="form-label">animal name</label>
-      <input type="text" id="signin-aniamlname" data-role="none" class="form-input" placeholder="philip">
+      <input type="text" id="signin-animalname" data-role="none" class="form-input" placeholder="philip">
     </div>
     <div class="form-control">
       <label for="signin-gender" class="form-label">type</label>
-    <input type="text" id="signin-aniamlgender" data-role="none"class="form-input" placeholder="Chicken">
+    <input type="text" id="signin-animalgender" data-role="none"class="form-input" placeholder="Chicken">
     </div>
 
    <div class="form-control">
