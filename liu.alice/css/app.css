@@ -2,6 +2,7 @@
 
 *, *::after, *::before {
    box-sizing: border-box;
+   max-width: 100%;
 }
 
 :root {
@@ -82,20 +83,6 @@ a:hover {
 
 
 
-/*.form-button {
-   display: inline-block;
-   width: 100%;
-   border-width: 0;
-   background-color: var(--color-neutral-light);
-   font: inherit;
-   padding: 0.5em 1em;
-   margin: 0;
-   outline: 0;
-   text-align: center;
-   text-decoration: none;
-}
-
-*/
 
 .form-button {
     font-size: 16px;
@@ -157,6 +144,7 @@ a:hover {
 .recent-search {
    margin: 1em;
    display: flex;
+   position: relative;
 }
 
 
@@ -261,7 +249,7 @@ a:hover {
     padding: 160px;
     text-align: center;
     font-family: 'helvetica','Ariel'，sans-serif;
-   background-image: url(../img/userimage.png);
+  /* background-image: url(../img/userimage.png);*/
    background-size: cover;
 
 }
@@ -504,7 +492,7 @@ a:hover {
 
 
 .map-placeholder {
-    background-image: url(../img/map.png);
+   /* background-image: url(../img/map.png);*/
     background-position: center;
     background-size: cover;
 }

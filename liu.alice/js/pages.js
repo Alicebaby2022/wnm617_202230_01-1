@@ -1,12 +1,25 @@
 const RecentPage = async() => {
+
+   await checkData(()=>window.google);
+
+   console.log(window.google)
+
+   let {result} = await query({
+      type:'recent_animal_locations',
+      params:[sessionStorage.userId]
+   });
+   console.log(result);
+
+  let map_el = await makeMap("#recent-page .map");
+   makeMarkers(map_el,result)
 }
 
 
-const ListPage = async() => {
-   // destructuring
+
+const ListPage = async() => { 
    let {result:animals} = await query({
       type:'animals_by_user_id',
-      params:[sessionStorage.userId]
+      params:[sessionStorage.userId] 
    })
    
    console.log(animals)
@@ -43,4 +56,6 @@ const AnimalProfilePage = async() => {
       params:[sessionStorage.animalId]
    })
    console.log(locations)
+   let map_el = await makeMap("#animal-profile-page .map");
+   makeMarkers(map_el,locations)
 }
