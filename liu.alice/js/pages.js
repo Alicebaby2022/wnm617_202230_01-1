@@ -10,22 +10,43 @@ const RecentPage = async() => {
    });
    console.log(result);
 
+    let valid_animals = result.reduce((r,o)=>{
+      o.icon = o.img;
+      if(o.lat && o.lng) r.push(o);
+      return r;
+   },[]);
+
   let map_el = await makeMap("#recent-page .map");
-   makeMarkers(map_el,result)
-}
+   makeMarkers(map_el,valid_animals)
+
+      map_el.data("markers").forEach((m,i)=>{
+      console.log(m)
+      m.addListener("click",function(e){
+          console.log(valid_animals[i])
+
+           map_el.data("infoWindow")
+            .open(map_el.data("map"),m);
+         map_el.data("infoWindow")
+            .setContent(valid_animals[i].name);
+       })
+     })
+   }
 
 
 
 const ListPage = async() => { 
+   // destructuring
    let {result:animals} = await query({
       type:'animals_by_user_id',
-      params:[sessionStorage.userId] 
+      params:[sessionStorage.userId]
    })
    
    console.log(animals)
 
    $("#list-page .animal-list").html(makeAnimalList(animals));
 }
+
+
 
 
 const UserProfilePage = async() => {
@@ -39,6 +60,17 @@ const UserProfilePage = async() => {
 
    $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
 }
+
+const UserEditPage = async() => {
+   let {result:users} = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   })
+   let [user] = users;
+
+   $("#user-edit-form").html(makeUserForm(user,"user-edit"))
+}
+
 
 
 const AnimalProfilePage = async() => {
@@ -58,4 +90,26 @@ const AnimalProfilePage = async() => {
    console.log(locations)
    let map_el = await makeMap("#animal-profile-page .map");
    makeMarkers(map_el,locations)
+}
+
+
+
+
+const AnimalEditPage = async() => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+
+   $("#animal-edit-form").html(makeAnimalForm(animal,"animal-edit"))
+}
+const AnimalAddPage = async() => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+
+   $("#animal-add-form").html(makeAnimalForm({},"animal-add"))
 }
