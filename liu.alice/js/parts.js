@@ -29,7 +29,7 @@ const makeUserProfilePage = o => `
     </div>
 
     <div class="form-control">
-    <a href="#settings-page" class="form-button">settings</a>
+    <a href="#user-password-page" class="form-button">Edit password</a>
     </div>
 </form>
       

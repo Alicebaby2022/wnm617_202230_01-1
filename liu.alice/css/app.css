@@ -560,6 +560,7 @@ a:hover {
    display: flex;
    flex-direction: column;
 }
+
 #animal-profile-page header {
     position: absolute;
     top: 0;
@@ -571,6 +572,7 @@ a:hover {
 .animal-profile-top {
     height: 51vh;
     border: 3px solid #eee;
+    position: relative;
 }
 .animal-profile-bottom {
    flex: 1 1 auto;

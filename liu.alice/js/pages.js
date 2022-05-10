@@ -4,11 +4,13 @@ const RecentPage = async() => {
 
    console.log(window.google)
 
-   let {result} = await query({
+   let {result,error} = await query({
       type:'recent_animal_locations',
       params:[sessionStorage.userId]
    });
    console.log(result);
+
+   if(error) throw(error);
 
     let valid_animals = result.reduce((r,o)=>{
       o.icon = o.img;
@@ -24,9 +26,9 @@ const RecentPage = async() => {
       m.addListener("click",function(e){
           console.log(valid_animals[i])
 
-           map_el.data("infoWindow")
+      map_el.data("infoWindow") 
             .open(map_el.data("map"),m);
-         map_el.data("infoWindow")
+      map_el.data("infoWindow")
             .setContent(valid_animals[i].name);
        })
      })
@@ -112,4 +114,16 @@ const AnimalAddPage = async() => {
    let [animal] = animals;
 
    $("#animal-add-form").html(makeAnimalForm({},"animal-add"))
+}
+
+
+const ChooseLocationPage = async () => {
+   let map_el = await makeMap("#choose-location-page .map");
+
+   map_el.data("map").addListener("click",function(e){
+      console.log(e)
+      $("#location-lat").val(e.latLng.lat())
+      $("#location-lng").val(e.latLng.lng())
+      makeMarkers(map_el,[e.latLng])
+   })
 }

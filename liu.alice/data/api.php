@@ -88,18 +88,132 @@ function makeStatement($data) {
            ", $p);
 
 
+       
+
+
+      case "insert_user":
+         $r = makeQuery($c,"SELECT id FROM `track_20224_users` WHERE `username`=? OR `email` = ?", [ $p[0], $p[1] ]);
+         if(count($r['result']))
+            return ["error"=>"Username or Email already exists"];
+
+         makeQuery($c,"INSERT INTO
+            `track_20224_users`
+            (`username`,`email`,`password`,`img`,`date_create`)
+            VALUES
+            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+ 
+
+      case "insert_animal":
+         makeQuery($c,"INSERT INTO
+            `track_20224_animals`
+            (`user_id`,`name`,`type`,`breed`,`description`,`img`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+
+
+      case "insert_location":
+         makeQuery($c,"INSERT INTO
+            `track_20224_locations`
+            (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
 
 
 
 
-       case "check_signin":
+
+       case "update_user":
+         $r = makeQuery($c,"UPDATE
+            `track_20224_users`
+            SET
+               `name` = ?,
+               `username` = ?,
+               `email` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+      case "update_password":
+         $r = makeQuery($c,"UPDATE
+            `track_20224_users`
+            SET
+               `password` = md5(?)
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+      case "update_animal":
+         $r = makeQuery($c,"UPDATE
+            `track_20224_animals`
+            SET
+               `name` = ?,
+               `type` = ?,
+               `breed` = ?,
+               `description` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+      case "update_location":
+         $r = makeQuery($c,"UPDATE
+            `track_20224_locations`
+            SET
+               `description` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+
+
+
+        case "delete_animal":
+         $r = makeQuery($c,"DELETE FROM
+            `track_20224_animals`
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+         case "check_signin":
          return makeQuery($c, "SELECT id from `track_20224_users` WHERE `username` = ? AND `password` = md5(?)", $p);
 
       default:
-          return ["error"=>"No Matched Type"];
+         return ["error"=>"No Matched Type"];
    }
-}   
+}
 
+
+
+
+
+
+
+
+
+
+      case "check_signin":
+         return makeQuery($c, "SELECT id from `track_20224_users` WHERE `username` = ? AND `password` = md5(?)", $p);
+
+      default:
+         return ["error"=>"No Matched Type"];
+   }
+}
 
   
 
