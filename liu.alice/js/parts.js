@@ -14,33 +14,19 @@ const makeAnimalList = templater(o=>`
 
 const makeUserProfilePage = o => `
 
-
-<div data-role="main">
-   <form id="signin-form" class="form">
-    <div class="form-control">
-      <div class="userimage"> <img src="${o.img}"></div>
-    
-      <label for="sign-username" class="form-label">username</label>
-      <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="${o.username}">
-    </div>
-    <div class="form-control">
-      <label for="signin-email" class="form-label">email</label>
-    <input type="text" id="signin-useremail" data-role="none"class="form-input" placeholder="${o.email}">
-    </div>
-
-    <div class="form-control">
-    <a href="#user-password-page" class="form-button">Edit password</a>
-    </div>
-</form>
-      
+<div class="user-profile-head">
+   <img src="${o.img}">
+   <a href="#user-edit-photo-page" class="floater left bottom"><img src="img/icons/pencil.svg" class="icon"></a>
 </div>
-
+<div class="user-profile-body">
+   <h2>${o.name}</h2>
+   <div class="user-profile-description">
+      <div><strong>Username</strong> @${o.username}</div>
+      <div><strong>Email</strong> ${o.email}</div>
+      <a href="#user-password-page">Edit password</a>
+   </div>
+</div>
 `;
-
-
-
-
-
 
 
 
@@ -57,7 +43,7 @@ const makeAnimalProfileDescription = o => `
 const FormControlInput = ({namespace,name,displayname,type,placeholder,value}) => {
    return `<div class="form-control">
       <label class="form-label" for="#${namespace}-${name}">${displayname}</label>
-      <input data-role="none" class="form-input" type="${type}" placeholder="${placeholder}" id="${namespace}-${name}" value="${value}">
+      <input data-role="none" class="form-input" type="${type}" placeholder="${placeholder}" id="${namespace}-${name}" value="${value??""}">
    </div>`;
 }
 

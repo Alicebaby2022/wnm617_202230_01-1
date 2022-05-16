@@ -41,6 +41,26 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
    }
 }
 
+
+function makeUpload($file,$folder) {
+   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+   if(@move_uploaded_file(
+      $_FILES[$file]['tmp_name'],
+      $folder.$filename
+   )) return ["result"=>$filename];
+   else return [
+      "error"=>"File Upload Failed",
+      "filename"=>$filename
+   ];
+}
+
+
+
+
+
+
+
 function makeStatement($data) {
    $c = makeConn();
    $t = $data->type;
@@ -178,6 +198,43 @@ function makeStatement($data) {
          if(isset($r['error'])) return $r;
          return ["result"=>"Success"];
 
+      case "search_animals":
+         $p = ["%$p[0]%", $p[1]];
+         return makeQuery($c,"SELECT *
+            FROM `track_20224_animals`
+            WHERE
+               `name` LIKE ? AND
+               `user_id` = ?
+            ",$p);
+
+      case "filter_animals":
+         return makeQuery($c,"SELECT *
+            FROM `track_20224_animals`
+            WHERE
+               `$p[0]` = ? AND
+               `user_id` = ?
+            ",[$p[1],$p[2]]);
+
+       
+       case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `track_20224_users`
+            SET `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_animal_image":
+         $r = makeQuery($c,"UPDATE
+            `track_20224_animals`
+            SET `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
 
 
 
@@ -202,17 +259,9 @@ function makeStatement($data) {
 
 
 
-
-
-
-
-
-      case "check_signin":
-         return makeQuery($c, "SELECT id from `track_20224_users` WHERE `username` = ? AND `password` = md5(?)", $p);
-
-      default:
-         return ["error"=>"No Matched Type"];
-   }
+if(!empty($_FILES)) {
+   $r = makeUpload("image","../uploads/");
+   die(json_encode($r));
 }
 
   

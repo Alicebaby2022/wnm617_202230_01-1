@@ -16,10 +16,12 @@ $(() => {
          
          case "user-profile-page": UserProfilePage(); break;
          case "user-edit-page": UserEditPage(); break;
+         case "user-edit-photo-page": UserEditPhotoPage(); break;
          
          case "animal-profile-page": AnimalProfilePage(); break;
          case "animal-edit-page": AnimalEditPage(); break;
          case "animal-add-page": AnimalAddPage(); break;
+         case "animal-edit-photo-page": AnimalEditPhotoPage(); break;
 
          case "choose-location-page": ChooseLocationPage(); break;
       }
@@ -37,8 +39,13 @@ $(() => {
    .on("submit", "#signup-form", function(e) {
       e.preventDefault();
       submitUserSignup();
-   })
+   })  
 
+   .on("submit", "#list-search-form", function(e) {
+      e.preventDefault();
+      let s = $(this).find("input").val();
+      checkSearchForm(s);
+   })
 
 
 
@@ -57,7 +64,47 @@ $(() => {
       submitLocationAdd();
    })
 
+   .on("change",".imagepicker input", function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         let filename = `uploads/${d.result}`;
+         $(this).parent().prev().val(filename)
+         $(this).parent().css({
+            "background-image":`url(${filename})`
+         })
+      })
+   })
 
+   .on("click", ".js-submit-user-upload", function(e) {
+      let image = $("#user-edit-photo-image").val();
+      query({
+         type: "update_user_image",
+         params: [image, sessionStorage.userId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         history.go(-1);
+      })
+   })
+
+   .on("click", ".js-submit-animal-upload", function(e) {
+      let image = $("#animal-edit-photo-image").val();
+      query({
+         type: "update_animal_image",
+         params: [image, sessionStorage.animalId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         history.go(-1);
+      })
+   })
+
+
+   .on("click", "[data-filter]", function(e) {
+      let {filter,value} = $(this).data();
+      if(value=="") ListPage();
+      else checkFilter(filter,value);
+   })
+ 
 
    // CLICKS
    .on("click", ".js-logout", function() {

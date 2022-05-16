@@ -158,13 +158,18 @@
 
 
 <section data-role="page" id="list-page">
-	<header data-role="header">
-		 <h1> Animal List</h1>
-		 <ul>
-     			 	<li class="flex-stretch"></li></ul>
-   </header>
-   <div data-role="main" class="overscroll">
-   	<ul class="animal-list" style="margin:0; padding: 0 20px;">
+	 <div data-role="main">
+         <div class="search-bar header flex-none">
+            <form data-ajax="false" id="list-search-form" class="hotdog dark">
+               <input type="search" data-role="none" placeholder="Search For An Animal">
+            </form>
+         </div>
+         <div class="filter-bar header flex-none">
+            <span data-filter="type" data-value="hedgehog">hedgehog</span>
+            <span data-filter="type" data-value="rabbit">rabbit</span>
+            <span data-filter="type" data-value="raccoon">raccoon</span>
+         </div>
+		   <ul class="animal-list" style="margin:0; padding: 0 20px;">
             </ul>
 
            <a href="#animal-add-page" class="floater bottom right circle-button">&plus;</a>
@@ -191,6 +196,7 @@
       <div data-role="main">
          <div class="animal-profile-top">
          <a href="#" class="floater bottom right js-animal-delete noclick-children"><img src="img/icons/trash.svg" class="icon"></a>
+         <a href="#animal-edit-photo-page" class="floater bottom left"><img src="img/icons/pencil.svg" class="icon"></a>
          </div>
          <div class="animal-profile-nav">
             <div class="active">Map</div>
@@ -269,6 +275,22 @@
 
 
 
+  <section data-role="page" id="animal-edit-photo-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-animal-upload">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="animal-edit-photo-image">
+         <label class="imagepicker replace">
+            <input type='file' id="animal-edit-photo-input" data-role="none">
+         </label>
+      </div>
+   </section>
 
 
  <section data-role="page" id="choose-animal-page">
@@ -281,7 +303,7 @@
          </ul>
       </header>
       <div data-role="main">
-         <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
+         <form id="animal-add-form2" class="overscroll" data-ajax="false" style="padding:1em"></form>
       </div>
    </section>
 
@@ -344,8 +366,8 @@
            </ul>
     </header> 
    <div data-role="main">
-   <form id="signin-form" class="form">
-    <div class="form-control">
+   <form id="signin-form2" class="form">
+    <!-- <div class="form-control">
       <label for="userimage" class="take-userimage"></label>
     
       <label for="sign-username" class="form-label">username</label>
@@ -359,7 +381,7 @@
    <div class="form-control">
       <label for="signin-location" class="form-label">location</label>
     <input type="text" id="signin-userlocation" data-role="none"class="form-input" placeholder="San Francisco">
-    </div>
+    </div> -->
 
    <!--  <div class="form-control">
     <a href="#user-password-page" class="form-button">edit password</a>
@@ -377,31 +399,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-<!--  <section data-role="page" id="user-settings-page">
-      <header data-role="header">
-         <h1>User Settings</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-         </ul>
-      </header>
-      <div data-role="main">
-         <ul>
-            <li><a href="#user-edit-page">Edit User</a></li>
-            <li><a href="#user-password-page">Edit Password</a></li>
-            <li><a href="#" class="js-logout">Logout</a></li>
-         </ul>
-      </div>
-   </section> -->
-
 <section data-role="page" id="user-edit-page">
       <header data-role="header">
          <h1>Edit User</h1>
@@ -417,17 +414,6 @@
         <!--  <a href="#" class="js-logout">Logout</a> -->
       </div>
    </section>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -465,43 +451,26 @@
 
 
 
-
-<!-- <section data-role="page" id="user-edit-page">
-		<header data-role="header">
-		 	<h1>User Edit</h1>
-				<ul>
+<section data-role="page" id="user-edit-photo-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
             <li><a href="#" data-rel="back">Back</a></li>
-		 	   <li class="flex-stretch"></li>
-		 	   <li><a href="#list-page">Save</a><li>
-		 	</ul>	
-   </header>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-user-upload">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="user-edit-photo-image">
+         <label class="imagepicker replace">
+            <input type='file' id="user-edit-photo-input" data-role="none">
+         </label>
+      </div>
+   </section>
 
-   <div data-role="main">  	
-	<form id="signin-form" class="form">
-    <div class="form-control">
-      <label for="userimage" class="take-image" style="padding: 135px;"> user's image</label>
-    
-      <label for="sign-username" class="form-label">username</label>
-      <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Add username">
-    </div>
-    <div class="form-control">
-      <label for="signin-gender" class="form-label">gender</label>
-    <input type="text" id="signin-usergender" data-role="none"class="form-input" placeholder="Add gender">
-    </div>
 
-   <div class="form-control">
-      <label for="signin-location" class="form-label">location</label>
-    <input type="text" id="signin-userlocation" data-role="none"class="form-input" placeholder="Add location">
-    </div>
 
-    <div class="form-control">
-    <a href="#user-profile-page" class="form-button">Confirm</a>
-    </div>
-</form>
-      
-</div>
-</section>
- -->
+
 
 
 
@@ -517,7 +486,7 @@
          </a></li>
          <li><a href="#user-profile-page" data-activateone=".nav-icon-set li:nth-child(3)">
             <span class="nav-icon"><img class="icon" src="img/icons/profile.svg"></span>
-            <span class="nav-icon-label">Profile</span>
+            <span class="nav-icon-label">Profile</span> 
          </a></li>
       </ul>
    </script>
