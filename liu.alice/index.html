@@ -107,9 +107,7 @@
       <div data-role="main">
            <div class="map"></div>
            <div class="recent-search">
-            <!-- <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
-               <input type="search" data-role="none" placeholder="Search"> -->
-            </form>
+           
             <div class="flex-none" style="line-height:3rem;padding:0 0.5em">
           </div>
          </div>
@@ -119,14 +117,7 @@
          <a href="#choose-animal-page" class="floater bottom right circle-button">&plus;</a>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
-      <!-- 	<ul>
-            <li><a href="#recent-page">Recent</a></li>
-            <li><a href="#list-page">list</a></li>
-            <li><a href="#user-profile-page">profile</a></li>
-         </ul>
-      </footer>
- -->
-
+  
 
 
       <div class="modal" id="map-drawer">
@@ -253,22 +244,7 @@
       </header>
       <div data-role="main">
          <form id="animal-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
-                 <!-- <div class="form-control">
-                   <label for="#animal-edit-name" class="form-label">name</label>
-                   <input type="text" class="form-input" placeholder="Type a Name" data-role="none" id="animal-edit-name">
-                 </div>
-                 <div class="form-control">
-                  <label for="#animal-edit-type" class="form-label">type</label>
-                  <input type="text" class="form-input" placeholder="Type a Type" data-role="none" id="animal-edit-type">
-                 </div>
-                 <div class="form-control">
-                  <label for="#animal-edit-breed" class="form-label">breed</label>
-                  <input type="text" class="form-input" placeholder="Type a Breed" data-role="none" id="animal-edit-breed">
-                  </div>
-                 <div class="form-control">
-                  <label for="#animal-edit-description" class="form-label">description</label>
-                  <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="animal-edit-description">
-                  </div> --> 
+                 
            </form>
       </div>
    </section>
@@ -293,6 +269,7 @@
    </section>
 
 
+
  <section data-role="page" id="choose-animal-page">
       <header data-role="header">
          <h1>Choose Animal</h1>
@@ -301,14 +278,17 @@
             <li class="flex-stretch"></li>
             <li><a href="#choose-location-page">Next</a></li>
          </ul>
-      </header>
-      <div data-role="main">
-         <form id="animal-add-form2" class="overscroll" data-ajax="false" style="padding:1em"></form>
+      </header> 
+      <div data-role="main" style="padding:1em">
+         <input type="hidden" id="location-animal">
+         <input type="hidden" id="location-start" value="-3">
+         <div class="form-control">
+            <a href="#animal-add-page" class="form-button">Add New Animal</a>
+         </div>
+        <!--  <p>or select one below</p> -->
+         <div class="form-control" id="choose-animal-input"></div>
       </div>
    </section>
-
-
-
 
 
 <section data-role="page" id="choose-location-page">
@@ -367,25 +347,7 @@
     </header> 
    <div data-role="main">
    <form id="signin-form2" class="form">
-    <!-- <div class="form-control">
-      <label for="userimage" class="take-userimage"></label>
-    
-      <label for="sign-username" class="form-label">username</label>
-      <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Alice Liu">
-    </div>
-    <div class="form-control">
-      <label for="signin-gender" class="form-label">gender</label>
-    <input type="text" id="signin-usergender" data-role="none"class="form-input" placeholder="Female">
-    </div>
-
-   <div class="form-control">
-      <label for="signin-location" class="form-label">location</label>
-    <input type="text" id="signin-userlocation" data-role="none"class="form-input" placeholder="San Francisco">
-    </div> -->
-
-   <!--  <div class="form-control">
-    <a href="#user-password-page" class="form-button">edit password</a>
-    </div> -->
+  
 </form>
       
 </div>

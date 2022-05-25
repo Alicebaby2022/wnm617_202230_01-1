@@ -55,16 +55,6 @@ const submitDeleteAnimal = async () => {
 
    
 
-// const submitDeleteAnimal = async () => {
-//    let {result,error} = await query({
-//       type: 'delete_animal',
-//       params: [sessionStorage.animalId]
-//    });
-
-//    if(error) throw(error);
-//    history.go(-1);
-// }
-
 
 
 
